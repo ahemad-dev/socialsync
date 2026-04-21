@@ -41,7 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://fc0ac6fa8d54.ngrok-free.app"
+    "https://socialsync-three.vercel.app"
   ],
   credentials: true
 }));
