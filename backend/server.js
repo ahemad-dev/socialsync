@@ -18,8 +18,9 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-  "http://localhost:5173",
-  "https://socialsync-three.vercel.app"
+ "http://localhost:5173",
+ "https://socialsync-three.vercel.app",
+ "https://socialsync-git-main-ahemad-devs-projects.vercel.app"
 ],
     methods: ["GET", "POST"]
   }
@@ -42,10 +43,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://socialsync-three.vercel.app"
-  ],
+ origin: [
+ "http://localhost:5173",
+ "https://socialsync-three.vercel.app",
+ "https://socialsync-git-main-ahemad-devs-projects.vercel.app"
+],
   credentials: true
 }));
 
