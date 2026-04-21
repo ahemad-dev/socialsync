@@ -17,7 +17,10 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://fc0ac6fa8d54.ngrok-free.app"],
+    origin: [
+  "http://localhost:5173",
+  "https://socialsync-three.vercel.app"
+],
     methods: ["GET", "POST"]
   }
 });
@@ -34,7 +37,7 @@ io.on("connection", (socket) => {
 // ✅ make io accessible in controllers
 app.set("io", io);
 
-app.use(cors({ origin: "*", credentials: true }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
