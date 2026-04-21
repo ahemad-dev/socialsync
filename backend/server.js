@@ -19,29 +19,26 @@ const server = http.createServer(app);
 =================================*/
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://socialsync-git-main-ahemad-devs-projects.vercel.app",
+  "https://socialsync-e99ee9tda-ahemad-devs-projects.vercel.app",
   "https://socialsync-three.vercel.app"
 ];
 
-/* ===============================
-   CORS for Express
-=================================*/
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
 
-      if (
-        allowedOrigins.includes(origin) ||
-        origin.includes("vercel.app")
-      ) {
-        return callback(null, true);
-      }
+    if (
+      allowedOrigins.includes(origin) ||
+      origin.includes("vercel.app")
+    ) {
+      return callback(null, true);
+    }
 
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true,
-  })
-);
+    return callback(new Error("CORS blocked"));
+  },
+  credentials: true
+}));
 
 /* ===============================
    Middlewares
